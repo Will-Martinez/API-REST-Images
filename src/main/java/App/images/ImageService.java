@@ -6,7 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class ImageService {
 
-    public ImageResponse handle(String base64, String imageType) {
+    public ImageResponse handle(
+            String base64,
+            String imageType,
+            String waterMark,
+            String fontType,
+            Integer x,
+            Integer y
+    ) {
         StationaryFactory factory = DefineFactory.getStationaryFactory(imageType);
         if (factory == null) {
             return new ImageResponse(
@@ -15,7 +22,14 @@ public class ImageService {
             );
         }
 
-        String result = factory.decode(base64, imageType);
+        String result = factory.decode(
+                base64,
+                imageType,
+                waterMark,
+                fontType,
+                x,
+                y
+        );
         return new ImageResponse(
                 result,
                 imageType,

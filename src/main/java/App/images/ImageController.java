@@ -24,7 +24,11 @@ public class ImageController {
     public ResponseEntity<ImageResponse> handleImage(@RequestBody ImageRequest imageRequest) {
         ImageResponse response = imageService.handle(
                 imageRequest.getBase64(),
-                imageRequest.getImageType()
+                imageRequest.getImageType(),
+                imageRequest.getWaterMark(),
+                imageRequest.getFontType(),
+                imageRequest.getX(),
+                imageRequest.getY()
         );
         if (!response.isSuccess()) {
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
