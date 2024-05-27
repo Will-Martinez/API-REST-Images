@@ -1,5 +1,7 @@
 package App.images;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,7 +20,16 @@ public class ImageController {
     }
 
     @PostMapping("/handleImage")
-    public String handleImage(@RequestBody String base64) {
-        return imageService.createImage(base64);
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<ImageResponse> handleImage(@RequestBody ImageRequest imageRequest) {
+        ImageResponse response = imageService.handle(
+                imageRequest.getBase64(),
+                imageRequest.getImageType()
+        );
+        if (!response.isSuccess()) {
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }
