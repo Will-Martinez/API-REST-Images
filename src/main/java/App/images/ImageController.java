@@ -16,7 +16,7 @@ public class ImageController {
 
     @GetMapping("/")
     public String coreApp() {
-        return "Hello World, this's the core App";
+        return "Hello World, this is the core App";
     }
 
     @PostMapping("/handleImage")

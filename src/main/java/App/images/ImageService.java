@@ -10,14 +10,14 @@ public class ImageService {
         StationaryFactory factory = DefineFactory.getStationaryFactory(imageType);
         if (factory == null) {
             return new ImageResponse(
-                    "Unsuported image type",
+                    "Unsupported image type",
                     imageType, false
             );
         }
 
-        String result = factory.createImage();
+        String result = factory.decode(base64, imageType);
         return new ImageResponse(
-                result + " image processed successfully",
+                result,
                 imageType,
                 true
         );
