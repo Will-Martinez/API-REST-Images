@@ -2,22 +2,23 @@ package App.images;
 
 public class ImageResponse {
 
-    private String message;
+    private String base64WithWaterMark;
     private String imageType;
     private boolean success;
 
-    public ImageResponse(String message, String imageType, boolean success) {
-        this.message = message;
+
+    public ImageResponse(String base64WithWaterMark, String imageType, boolean success) {
+        this.base64WithWaterMark = base64WithWaterMark;
         this.imageType = imageType;
         this.success = success;
     }
 
-    public String getMessage() {
-        return message;
+    public String getBase64WithWaterMark() {
+        return base64WithWaterMark;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setBase64WithWaterMark(String base64WithWaterMark) {
+        this.base64WithWaterMark = base64WithWaterMark;
     }
 
     public String getImageType() {

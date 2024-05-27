@@ -28,7 +28,7 @@ public class ImageDecoder {
             );
             Path outputPath = Paths.get("src\\images_output", LocalDate.now().toString() + "." + imageType);
             Files.write(outputPath, imageWithWaterMark);
-            return "Image with water mark created successfully on path: " + outputPath.toAbsolutePath();
+            return Base64.getEncoder().encodeToString(imageWithWaterMark);
         } catch (Exception e) {
             return "Failed to write image to file: " + e.getMessage();
         }
