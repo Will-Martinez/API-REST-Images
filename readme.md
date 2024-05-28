@@ -40,7 +40,8 @@ Implementação de uma API REST em Sprint Boot para manipulação de imagens
         "y": 100
 }
 ```
-
+- Para enviar a requisição, certifique-se de clicar em send com o método HTTP selecionado para post, a url em localhost:300 com a devida api e as configurações de envio de requisição escolhidas para Body, raw e JSON.
+  ![image](./doc_prints/postman_send_post.png)
 - Para coletar a base64 de sua imagem, acesse o link(https://www.base64-image.de/) e coloque a imagem que quiser para coletar a base64.
   ![image](./doc_prints/base64_encoder.png)
 - Em seguida clique para exibir o código e depois pra colar a base64 da imagem
