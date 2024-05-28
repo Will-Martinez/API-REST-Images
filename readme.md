@@ -19,7 +19,7 @@ Implementação de uma API REST em Sprint Boot para manipulação de imagens
     ![image](./doc_prints/clone_example.png)
   - Use o comando "cd" para o diretorio da aplicação.
     ![image](./doc_prints/change_to_project.png)
-  - Use o comando de dentro do projeto .\mvnw spring-boot:run, para iniciar a aplicação
+  - Use o comando ".\mvnw spring-boot:run dentro" da raiz projeto para iniciar a aplicação
     ![image](./doc_prints/runing_app.png)
   - Após esse procedimento, a aplicação estará rodando no endereço local, sendo ele http://localhost:3000/.
 
