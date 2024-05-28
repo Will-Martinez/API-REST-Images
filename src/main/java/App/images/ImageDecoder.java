@@ -26,8 +26,9 @@ public class ImageDecoder {
                     x,
                     y
             );
-            Path outputPath = Paths.get("src\\images_output", LocalDate.now().toString() + "." + imageType);
-            Files.write(outputPath, imageWithWaterMark);
+            // logic for creating a image file to images_output
+            // Path outputPath = Paths.get("src\\images_output", LocalDate.now().toString() + "." + imageType);
+            // Files.write(outputPath, imageWithWaterMark);
             return Base64.getEncoder().encodeToString(imageWithWaterMark);
         } catch (Exception e) {
             return "Failed to write image to file: " + e.getMessage();

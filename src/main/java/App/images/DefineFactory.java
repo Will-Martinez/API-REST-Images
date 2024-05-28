@@ -19,7 +19,7 @@ public class DefineFactory {
         return factories;
     }
 
-    public static StationaryFactory getStationaryFactory(String type) {
+    public static StationaryFactory getFactory(String type) {
         return mapFactories().get(type);
     }
 }

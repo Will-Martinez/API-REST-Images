@@ -13,7 +13,7 @@ public class pngFactory implements StationaryFactory {
             Integer x,
             Integer y
     ) {
-        return ImageDecoder.decodeImage(
+        return StationaryFactory.super.decode(
                 base64,
                 imageType,
                 waterMark,

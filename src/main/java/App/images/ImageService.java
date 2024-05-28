@@ -4,7 +4,7 @@ import App.images.interfaces.StationaryFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImageService {
+public class ImageService extends DefineFactory {
 
     public ImageResponse handle(
             String base64,
@@ -14,7 +14,7 @@ public class ImageService {
             Integer x,
             Integer y
     ) {
-        StationaryFactory factory = DefineFactory.getStationaryFactory(imageType);
+        StationaryFactory factory = getFactory(imageType);
         if (factory == null) {
             return new ImageResponse(
                     "Unsupported image type",
